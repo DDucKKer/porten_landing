@@ -45,6 +45,7 @@ header{
 }
 .header-first-line{
     padding: 14px 0px;
+    color: #969696;
 }
 .header-first-line a, .header-first-info{
     display: flex;
@@ -674,6 +675,7 @@ header a:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #D0D0D0;
 }
 
 
@@ -734,6 +736,28 @@ header a:hover{
     nav a{
         padding: 20px 10px;
     }
+    .season-21-22{
+        width: 55%;
+        height: 500px;
+        max-width: 1040px;
+        padding: 20px 10px 0;
+    }
+    .slide-wristwatch-bg{
+        height: 250px;
+    }
+    .new-collection{
+        height: 500px;
+    }
+    .collections-photo{
+        height: 500px;
+    }
+    .collection-18{
+        padding-top: 30px;
+    }
+    .title{
+        font-size: 30px;
+    }
+
     .article-text h6{
         margin-top: 20px;
     }
