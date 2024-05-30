@@ -1,0 +1,954 @@
+@font-face {
+    font-family: "PT Sans";
+    font-display: swap;
+    src: url("../fonts/PTSans-Regular.woff2") format("woff2"), url("../fonts/PTSans-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "Playfair Display";
+    font-display: swap;
+    src: url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "Playfair Display";
+    font-display: swap;
+    src: url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*, ::after, ::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #000;
+}
+
+/* HEADER */
+header{
+    width: 100%;
+}
+.header-first-line{
+    padding: 14px 0px;
+}
+.header-first-line a, .header-first-info{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+.phone-number, .phone-number img{
+    padding-right: 15px;
+}
+.work-days::before{
+    content: "";
+    border-left: 1px solid #969696;
+    padding-left: 15px;
+}
+.work-days::after {
+    content: "";
+    border-right: 1px solid #969696;
+    padding-left: 15px;
+}
+.work-time{
+    padding-left: 15px;
+}
+.header-first-line img{
+    height: 16px;
+}
+.header-second-line{
+    background-color: #0F0F0F;
+    height: 80px;
+}
+.header-second-line .container{
+    height: 80px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1140px;
+    margin: 0 auto;
+    align-items: center;
+}
+.header-second-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.basket{
+    padding-right: 20px;
+}
+.basket, .search{
+    padding-left: 20px;
+}
+.menu-block{
+    display: flex;
+}
+nav{
+    display: block;
+    justify-content: space-between;
+}
+ul{
+    display: flex;
+    margin: 0px;
+}
+ul li{
+    list-style: none;
+    text-transform: uppercase;
+}
+.menu-block{
+    align-items: center;
+}
+nav a{
+    padding: 29px 20px;
+    font-size: 14px;
+}
+.header-second-icons input{
+    display: none;
+}
+a{
+    color: #969696;
+    text-decoration: none;
+    transition: 0.5s;
+}
+nav a:hover{
+    background-color: #1F1F1F;
+}
+header a:hover{
+    color: #ffffff;
+}
+
+.hamburger-menu{
+    display: none;
+}
+
+#menu__toggle {
+    opacity: 0;
+  }
+  
+  .menu__btn {
+    display: flex; 
+    align-items: center; 
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 101;
+  }
+  
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 80px 0;
+    z-index: 5;
+    list-style: none;
+    text-align: center;
+    background-color: rgba(31, 31, 31, 0.95);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  }
+  
+  .menu__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .menu__item:hover {
+    background-color: #191B1C;
+  }
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    transition-duration: .25s;
+  }
+  .menu__box {
+    transition-duration: .25s;
+  }
+  .menu__item {
+    transition-duration: .25s;
+  }
+
+  
+/* MAIN */
+.main, .mySwiper{
+    min-height: 88vh;
+}
+.bg-slide{
+    height: 100%;
+    background-position: center ;
+    background-size:cover;
+}
+.bg-1{
+    background-image: url('../img/bg-main.jpg');
+}
+.bg-2{
+    background-image: url('../img/bg-footer.jpg');
+}
+.bg-3{
+    background-image: url('../img/new-collection.jpg');
+}
+.main-info{ 
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 260px;
+    align-items: center;
+    z-index: 1;
+    left: 0;
+    right: 0;
+}
+.main-info-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 104px 58px;
+    border: 4px solid white;
+}
+.main-info-logo img{
+    max-width: 185px;
+    width: 100%;
+    padding-bottom: 16px;
+    margin-bottom: 7px;
+    border-bottom: 2px solid #fff;
+}
+.main-info-logo p {
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.main-info-desc{
+    padding-top: 80px;
+    width: 100%;
+    max-width: 730px;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* collections */
+
+.collections{
+    display: flex;
+
+    flex-direction: column;
+}
+.collections-first-line, .collections-second-line{
+    display: flex;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.season-21-22{
+    width: 55%;
+    height: 730px;
+    max-width: 1040px;
+    padding-top: 93px;
+}
+.seasonSwiper-body{
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+}
+.season-21-22 .swiper {
+    /* max-width: 880px; */
+    width: 100%;
+      }
+
+      .season-21-22 .swiper-slide { 
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .season-21-22 .swiper-slide img {
+        display: block; 
+        object-fit: cover;
+      }
+.seasonSwiper .swiper-wrapper {
+    justify-content: center;
+    /* max-width: 880px; */
+    /* width: 100%; */
+}
+.slide-wristwatch{
+    padding: 0; 
+    margin-right: 50px;
+}
+.slide-wristwatch-bg{
+    background-color: #191B1C;
+    width: 100%;
+    height: 325px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.slide-wristwatch-bg img{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.new-collection{
+    width: 100%;
+    height: 730px;
+    max-width: 880px;
+    background-image: url('../img/new-collection.jpg');
+    background-position: center;
+    max-width: 880px;
+    width: 100%; 
+    display: flex; 
+    align-items: end; 
+    justify-content: center;
+    position: relative;
+
+} 
+.new-collection-text{
+    padding-bottom: 100px;
+    position: absolute;
+    text-align: center;
+}
+.collections-photo{
+    width: 100%;
+    height: 600px;
+    max-width: 936px;
+    background-image: url('../img/collections.jpg'); 
+    background-position: center;
+}
+.collection-18{
+    width: 100%;
+    /* height: 600px; */
+    max-width: 984px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    text-align: center;
+}
+.collection-18-text{
+    margin: 0 auto;
+    width:100%;
+    max-width: 628px;
+
+}
+.title{
+    font-family: 'Playfair Display';
+    text-transform: uppercase;
+    font-size: 36px;
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    font-weight: 400;
+    position: relative;
+    text-align: center;
+}
+.title::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid white;
+    width: 120px;
+    height: 1px;
+    margin: 0 auto;
+}
+.collection-18-text p{
+    margin-bottom: 64px;
+}
+.collection-button{
+    font-size: 18px;
+    padding: 12px 28px;
+    color: white;
+    border: 2px solid white;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.collection-button:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* new wristwatches */
+.new-wristwatches{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1140px;
+    margin: 120px auto 150px;
+
+}
+.new-wristwatches-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 23px;
+    row-gap: 40px;
+}
+.wristwatch{
+    display: none;
+    height: 100%;
+    max-height: 405px;
+}
+.wristwatch-bg{
+    background-color: #191B1C;
+    width: 260px;
+    height: 325px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.wristwatch-bg img{
+    width: 215px;
+    transition: 1s;
+}
+.wristwatch-bg img:hover{
+    width: 245px;
+}
+.wristwatch-brand{
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display';
+    text-transform: capitalize;
+}
+.wristwatch-price{
+    font-size: 16px;
+    font-family: 'Playfair Display';
+    text-transform: capitalize;
+}
+.upload img{
+    filter: blur(4px);
+}
+  
+  .wristwatch:nth-child(1),
+  .wristwatch:nth-child(2),
+  .wristwatch:nth-child(3),
+  .wristwatch:nth-child(4),
+  .wristwatch:nth-child(5),
+  .wristwatch:nth-child(6),
+  .wristwatch:nth-child(7),
+  .wristwatch:nth-child(8) {
+    display: grid;
+  }
+  .upload .collection-button{
+    position: absolute;
+  }
+
+
+/* articles */
+.articles{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 63px;
+    background-color: #0F0F0F;
+
+}
+.article-row{
+    display: flex;
+    margin-bottom: 30px;
+}
+.article-img{
+    width: 55%;
+    max-width: 989px
+}
+.article-img img{
+    width: 100%;
+}
+.article-text{
+    margin: 0 auto;
+    width: 45%;
+    max-width: 628px;
+    padding: 0 10px;
+}
+.article-text h6{
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 53px;
+    text-align: left;
+}
+.article-text p{
+    font-size: 14px;
+    margin-bottom: 39px;
+    text-align: left;
+}
+.article-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.article-links a{
+    font-size: 18px;
+}
+
+
+
+
+
+/* partners */
+.partners{
+    background-color: #0F0F0F;
+    padding: 65px 0 106px;
+}
+.partners-png{
+    width: 100%;
+    max-width: 1385px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.partners-png img{
+    width: 100%;
+}
+
+
+/* footer */
+.footer-first-line{
+    /* height: 450px; */
+    background-image: url('../img/bg-footer.jpg');
+    background-position: center;
+
+}
+.footer-first-line h2{
+    text-transform: uppercase;
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 24px;
+    padding-bottom: 40px;
+}
+.footer-first-line h2{
+    text-transform: uppercase;
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 24px;
+    padding-bottom: 40px;
+}
+.footer-first-line-cont{
+    width: 100%;
+    max-width: 1110px;
+    padding: 80px 0 67px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.footer-first-line-1, .footer-first-line-2 , .footer-first-line-3 {
+    max-width: 350px;
+}
+.mail-form{
+    padding-top: 20px;
+    display: flex;
+}
+.footer-btns{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 10px;
+}
+.footer-form-input {
+    padding: 10px 20px;
+    min-height: 41px;
+    background-color: rgba(255, 255, 255, .4);
+    max-width: 210px;
+    width: 100%;
+    color: #fff;
+
+}
+.footer-form-input::placeholder{
+    color: white;
+}
+.footer-btn{
+    padding: 10px 20px;
+    min-height: 41px;
+    color: white;
+    background-color: #0f0f0f;
+    letter-spacing: .05em;
+    cursor: pointer;
+    transition: all .6s ease 0s;
+    border: 1px solid transparent;
+}
+.footer-btn:hover{
+    background-color: #1F1F1F;
+    border-color: rgba(255, 255, 255, .4);
+}
+
+.footer-second-line-cont{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1110px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+@media (max-width: 1600px){
+    
+    .header-first-line, .header-second-line{
+        padding-left:15px;
+        padding-right:15px;
+    }
+    .main-info-logo{
+        padding: 34px 29px;
+    }
+    .main-info-logo p {
+        font-size: 16px
+    }
+    .main-info-desc{
+        padding-top: 80px;
+        width: 100%;
+        max-width: 730px;
+        font-size: 16px;
+    }
+    .partners-png{
+        width: 90%;
+    }
+    .footer-first-line, .footer-second-line{
+        padding-left:15px;
+        padding-right:15px;
+    }
+    .collection-18-text{
+        padding: 0 10px;
+    }
+}
+
+
+
+@media (max-width: 1100px){
+    .main-info{    
+        top: 50vh;
+        transform: translate(0%, -50%);
+    }
+    .new-wristwatches-list{ 
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .header-first-line{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .header-first-line p{
+        font-size: 10px;
+    }
+    .header-second-line{
+        height: 60px;
+    }
+    .header-second-line .container {
+        height: 60px;
+    }
+    nav a{
+        padding: 20px 10px;
+    }
+    .article-text h6{
+        margin-top: 20px;
+    }
+    .article-text p{
+        margin-bottom: 39px;
+    }
+    .article-links a{
+        font-size: 14px;
+    }
+    .footer-first-line-1, 
+    .footer-first-line-2, 
+    .footer-first-line-3 {
+        max-width: 320px;
+    }
+}
+
+
+
+@media screen and (max-width: 900px){
+    .new-wristwatches{
+        margin: 70px auto 50px;
+    }
+    .new-wristwatches-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .title{
+        font-size: 24px;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+    .collections-first-line, .collections-second-line{ 
+        flex-direction: column;
+        
+    }
+    .collections-photo{
+        display: none;
+    }
+    .season-21-22{
+        width: 100%;
+        height: 600px;
+        padding: 40px 10px;
+    }
+    .header-first-line, .header-second-line nav{
+        display: none;
+    }
+    .hamburger-menu{
+        display: contents;
+    }
+    header{
+        position: fixed;
+        top: 0px;
+        z-index: 2;
+    }
+    .main, .mySwiper{
+        min-height: 100vh;
+    }
+    .header-second-icons{
+        padding-right: 50px;
+    }
+    .new-collection{
+        height: 450px;
+        background-size: cover;
+    }
+    .new-collection-text{
+        padding-bottom: 50px;
+    }
+    .collection-18{
+        padding-top: 50px;
+    }
+    .articles, .partners{
+        padding-top: 20px;
+    }
+    .article-row{
+        flex-direction: column;
+    }
+    .article-img{
+        width: 100%;
+    }
+    .article-text{
+        width: 100%;
+    }
+    .article-links-tags{
+        width: 140px;
+    text-align: right;
+    }
+    .footer-first-line-cont{
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 40px 0 33px;
+    }
+    .footer-first-line-3{
+        max-width: 500px;
+    }
+    
+}
+.footer-first-line-cont-mob{
+    display: none;
+}
+@media (max-width: 600px) {
+    .main-info-logo{
+        padding: 34px 29px;
+    }
+    .main-info-logo p {
+        font-size: 16px
+    }
+    .main-info-desc{
+        padding: 50px 10px 0;
+        width: 100%;
+        max-width: 730px;
+        font-size: 12px;
+    }
+    .new-wristwatches{
+        margin: 100px auto 100px;
+    }
+    .new-wristwatches-list{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+        row-gap: 20px;
+    }
+    .wristwatch{
+        height: 100%;
+        max-height: 365px;
+        max-width: 170px;
+    }
+    .wristwatch-bg{
+        width: 100%;
+        height: 280px;
+        margin-bottom: 15px;
+    }
+    .wristwatch-bg img{
+        width: 100%;
+        transition: 1s;
+    }
+    .wristwatch-bg img:hover{
+        width: 105%;
+        transition: 1s;
+    }
+    .partners-png{
+        padding: 0 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .footer-first-line, .footer-second-line {
+        padding: 0;
+    }
+    .footer-first-line h2 {
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+    .footer-first-line-cont{
+        flex-direction: column;
+    }
+    .footer-first-line-cont-mob{
+        display: contents;
+        width: 100%;
+    }
+    .footer-first-line-cont{
+        display: none;
+    }
+    .footer-first-line-1, .footer-first-line-2, .footer-first-line-3 {
+        max-width: 600px;
+    }
+    .footer-first-line-2 .panel .footer-btn{
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    .accordion {
+        background-color: #1F1F1F;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+    
+    .active, .accordion:hover {
+        background-color: #1F1F1F;
+    }
+    
+    .panel {
+        padding: 10px 18px;
+        background-color: #1F1F1F;
+        display: none;
+        overflow: hidden;
+    }
+    .footer-second-line-cont{
+        font-size: 12px;
+        padding: 0 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
