@@ -831,6 +831,9 @@ header a:hover{
     .footer-first-line-3{
         max-width: 500px;
     }
+    .footer-form-input{
+        max-width: none;
+    }
     
 }
 .footer-first-line-cont-mob{
