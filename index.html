@@ -8,26 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <style> 
-        .mySwiper {
-          width: 100%;
-          max-width: 100vw;
-          height:100px;
-        }
-    
-        .mySwiper .swiper-slide { 
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-    
-        .mySwiper .swiper-slide img {
-          display: block;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      </style>
+
 
 </head>
 <body>
@@ -66,14 +47,18 @@
                         </nav>
                         <div class="header-second-icons">
                             <a href="#" class="basket">
-                                <img src="img/icon/basket.svg" alt="basket">
+                                <img src="img/icon/basket.svg" alt="basket" class="menu-icon">
                             </a>
                             <div class="search">
                                 <div class="search-icon">
-                                    <img src="img/icon/search.svg" alt="">
-                                </div>
+                                    <input id="search-toggle" type="checkbox" />
+                                    <label class="search-btn" for="search-toggle">
+                                        <img src="img/icon/search.svg" alt="search" class="menu-icon">
+                                    </label>
                                 <div class="search-input">
-                                    <input type="text"/>
+                                    <input type="text" placeholder="Що ви шукаете сьогодні?"/>
+                                    <button class="collection-button">Пошук</button>
+                                </div>
                                 </div>
                             </div>
                         </div>

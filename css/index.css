@@ -30,7 +30,9 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+*:focus {
+    outline: none;
+}
 body {
     font-family: "PT Sans", sans-serif;
     font-weight: 400;
@@ -42,10 +44,14 @@ body {
 /* HEADER */
 header{
     width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
 }
 .header-first-line{
     padding: 14px 0px;
     color: #969696;
+    background-color: #000;
 }
 .header-first-line a, .header-first-info{
     display: flex;
@@ -96,6 +102,14 @@ header{
 .basket, .search{
     padding-left: 20px;
 }
+.menu-icon{
+    height: 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+.menu-icon:hover{
+    filter: invert(40%);
+}
 .menu-block{
     display: flex;
 }
@@ -118,8 +132,44 @@ nav a{
     padding: 29px 20px;
     font-size: 14px;
 }
-.header-second-icons input{
-    display: none;
+#search-toggle{
+    position: absolute;
+    opacity: 0;
+}
+#search-toggle:checked ~ .search-input {
+    
+    visibility: visible;
+    top: 124px;
+  }
+.search-input{
+    position: absolute;
+    top: -124px;
+    z-index: 2;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    left: 50%;
+    height: 50px;
+    transform: translate(-50%, 0%);
+    display: flex;
+    visibility: hidden;
+}
+.search-input input{
+    width: 100%;
+    height: 100%;
+    background-color: #1F1F1F;
+    color: #fff;
+    padding-left: 50px;
+    border: 1px solid white;
+    
+}
+.search-input input::placeholder{
+    color: #fff;
+}
+.search-input .collection-button{
+    background-color: #1F1F1F;
+    border: 1px solid white;
+
 }
 a{
     color: #969696;
@@ -234,8 +284,26 @@ header a:hover{
   
 /* MAIN */
 .main, .mySwiper{
-    min-height: 88vh;
+    min-height: 100vh;
 }
+.mySwiper {
+    width: 100%;
+    max-width: 100vw;
+    height:100px;
+  }
+
+  .mySwiper .swiper-slide { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mySwiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 .bg-slide{
     height: 100%;
     background-position: center ;
@@ -254,7 +322,8 @@ header a:hover{
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 260px;
+    top: 50vh;
+    transform: translate(0%, -50%);
     align-items: center;
     z-index: 1;
     left: 0;
@@ -324,26 +393,23 @@ header a:hover{
     max-width: 880px;
     margin: 0 auto;
 }
-.season-21-22 .swiper {
-    /* max-width: 880px; */
+.season-21-22 .swiper { 
     width: 100%;
-      }
+}
 
-      .season-21-22 .swiper-slide { 
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .season-21-22 .swiper-slide img {
-        display: block; 
-        object-fit: cover;
-      }
-.seasonSwiper .swiper-wrapper {
+.season-21-22 .swiper-slide { 
+    display: flex;
     justify-content: center;
-    /* max-width: 880px; */
-    /* width: 100%; */
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.season-21-22 .swiper-slide img {
+    display: block; 
+    object-fit: cover;
+}
+.seasonSwiper .swiper-wrapper {
+    justify-content: center; 
 }
 .slide-wristwatch{
     padding: 0; 
@@ -362,24 +428,7 @@ header a:hover{
     width: 100%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 .new-collection{
     width: 100%;
     height: 730px;
@@ -407,8 +456,7 @@ header a:hover{
     background-position: center;
 }
 .collection-18{
-    width: 100%;
-    /* height: 600px; */
+    width: 100%; 
     max-width: 984px;
     display: flex;
     flex-direction: column;
@@ -528,8 +576,7 @@ header a:hover{
 /* articles */
 .articles{
     display: flex;
-    flex-direction: column;
-    /* align-items: center; */
+    flex-direction: column; 
     width: 100%;
     margin: 0 auto;
     padding-top: 63px;
@@ -598,8 +645,7 @@ header a:hover{
 
 
 /* footer */
-.footer-first-line{
-    /* height: 450px; */
+.footer-first-line{ 
     background-image: url('../img/bg-footer.jpg');
     background-position: center;
 
@@ -733,6 +779,12 @@ header a:hover{
     .header-second-line .container {
         height: 60px;
     }
+    
+    #search-toggle:checked ~ .search-input {
+        
+        visibility: visible;
+        top: 86px;
+    }
     nav a{
         padding: 20px 10px;
     }
@@ -809,16 +861,19 @@ header a:hover{
     .hamburger-menu{
         display: contents;
     }
-    header{
-        position: fixed;
-        top: 0px;
-        z-index: 2;
+    #search-toggle:checked ~ .search-input {
+        
+        visibility: visible;
+        top: 60px;
     }
     .main, .mySwiper{
         min-height: 100vh;
     }
+    .basket, .search {
+        padding: 0 20px 0 0;
+    }
     .header-second-icons{
-        padding-right: 50px;
+        padding-right: 20px;
     }
     .new-collection{
         height: 450px;
